@@ -137,7 +137,7 @@ const FifthSection = () => {
     <section className="bg-gray-300 py-20">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold mb-8">Contenu de la Cinquième Section</h2>
-        {/* Insérer le contenu de la cinquième section ici */}
+         
       </div>
     </section>
   );
@@ -148,8 +148,7 @@ const SixthSection = () => {
     <section className="bg-gray-400 py-20">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold mb-8">Contenu de la Sixième Section</h2>
-        {/* Insérer le contenu de la sixième section ici */}
-      </div>
+              </div>
     </section>
   );
 };
@@ -159,8 +158,7 @@ const SeventhSection = () => {
     <section className="bg-gray-500 py-20">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold mb-8">Contenu de la Septième Section</h2>
-        {/* Insérer le contenu de la septième section ici */}
-      </div>
+               </div>
     </section>
   );
 };

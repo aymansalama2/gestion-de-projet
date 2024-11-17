@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import '../authentification/styles.css';
+
 
 export default function DemandeClient() {
   const [formData, setFormData] = useState({
@@ -55,11 +57,11 @@ export default function DemandeClient() {
   };
 
   return (
-    <div className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 min-h-screen flex items-center justify-center">
-      <div className="container mx-auto px-4 py-8 bg-gray-100 rounded-lg shadow-lg shadow-black">
+    <div className="bg-image min-h-screen flex items-center justify-center">
+      <div className="container mx-auto px-4 py-8  rounded-lg shadow-lg shadow-black">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-2">Demande de Projet</h2>
-          <p className="text-gray-700">Décrivez votre projet</p>
+          <h2 className="text-white text-3xl font-bold mb-2">Demande de Projet</h2>
+          <p className="text-white">Décrivez votre projet</p>
         </div>
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
           <div className="mb-8 bg-white rounded-lg shadow-lg p-6">
@@ -186,7 +188,7 @@ export default function DemandeClient() {
             <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
               Envoyer
             </button>
-            <button onClick={() => navigate('/profile')} className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+            <button onClick={() => navigate('/profile')} className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
               Retour au Profil
             </button>
           </div>

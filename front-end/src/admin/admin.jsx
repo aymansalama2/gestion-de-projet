@@ -25,7 +25,6 @@ console.log(projectId)
   const handleDeleteProject = async (projectId) => {
     try {
       await axios.delete(`http://127.0.0.1:8000/api/projets/${projectId}`);
-      // Mettre à jour la liste des projets après la suppression
       const updatedProjects = projects.filter(project => project.id !== projectId);
       setProjects(updatedProjects);
     } catch (error) {
@@ -101,16 +100,20 @@ console.log(projectId)
               </thead>
               <tbody className="text-gray-600 text-sm font-light">
                 {clients.map((client) => (
-                  <tr key={client.id} className="border-b border-gray-200 hover:bg-gray-100">
-                    <td className="py-3 px-6 text-left whitespace-nowrap">{client.nom}</td>
-                    <td className="py-3 px-6 text-left">{client.email}</td>
-                    <td className="py-3 px-6 text-left">{client.telephone}</td>
-                  </tr>
+                  // Check if the email is admin@gmail.com
+                  client.email !== 'admin@gmail.com' && (
+                    <tr key={client.id} className="border-b border-gray-200 hover:bg-gray-100">
+                      <td className="py-3 px-6 text-left whitespace-nowrap">{client.nom}</td>
+                      <td className="py-3 px-6 text-left">{client.email}</td>
+                      <td className="py-3 px-6 text-left">{client.telephone}</td>
+                    </tr>
+                  )
                 ))}
               </tbody>
             </table>
           </div>
         );
+      
         case "détails":
         const showProjectDetails = (project) => {
           const detailsMessage = `
@@ -231,7 +234,7 @@ console.log(projectId)
 
 
             <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-gray-200">
+              <table className="min-w-full divide-y divide-gray-700">
                 <thead className="bg-gray-50">
                   <tr>
                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Titre du projet</th>
